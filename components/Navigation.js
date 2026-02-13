@@ -8,6 +8,7 @@ export default class Navigation extends React.Component {
                 <a href="#" className="toggle-nav"><img src="/img/navigation-toggle.svg" alt="Toggle navigation bar" /></a>
             </div>
             <ul>
+                <li><a href="/query">Query (WebMCP)</a></li>
                 <li><a href="https://query.comunica.dev/">Try live</a></li>
                 <li><a href="/docs/">Docs</a></li>
                 <li><a href="/blog/">Blog</a></li>
