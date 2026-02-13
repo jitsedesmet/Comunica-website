@@ -78,9 +78,18 @@ SELECT ?country ?countryLabel ?capital ?capitalLabel WHERE {
     };
 
     return () => {
-      document.body.removeChild(script);
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
     };
   }, []);
+
+  // Re-register tools when state changes to update closures
+  useEffect(() => {
+    if (window.navigator?.modelContext) {
+      registerWebMCPTools();
+    }
+  }, [query, datasources, results, bypassCache, outputFormat]);
 
   const registerWebMCPTools = () => {
     if (!window.navigator.modelContext) {
@@ -104,12 +113,12 @@ SELECT ?country ?countryLabel ?capital ?capitalLabel WHERE {
             },
             required: ['datasources']
           },
-          execute: ({ datasources }) => {
-            setDatasources(datasources);
+          execute: ({ datasources: newDatasources }) => {
+            setDatasources(newDatasources);
             return {
               content: [{
                 type: 'text',
-                text: `Datasources updated to: ${datasources.join(', ')}`
+                text: `Datasources updated to: ${newDatasources.join(', ')}`
               }]
             };
           }
@@ -327,7 +336,9 @@ SELECT ?country ?countryLabel ?capital ?capitalLabel WHERE {
 
       const context = {
         sources: datasources,
-        ...(bypassCache && { httpInvalidator: { clear: () => {} } })
+        ...(bypassCache && { 
+          fetch: (url, init) => fetch(url, { ...init, cache: 'no-store' })
+        })
       };
 
       const bindingsStream = await queryEngineRef.current.queryBindings(query, context);
@@ -370,28 +381,46 @@ SELECT ?country ?countryLabel ?capital ?capitalLabel WHERE {
     setDatasources(example.datasources);
   };
 
-  // Check for URL parameters on mount
+  // Check for URL parameters and handle auto-execution
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const queryParam = params.get('query');
     const datasourcesParam = params.get('datasources');
-    const autoExecute = params.get('autoExecute') === 'true';
+    const autoExecuteParam = params.get('autoExecute') === 'true';
 
-    if (queryParam) {
+    let shouldExecute = false;
+
+    if (queryParam && queryParam !== query) {
       setQuery(queryParam);
+      shouldExecute = autoExecuteParam;
     }
+    
     if (datasourcesParam) {
       try {
-        setDatasources(JSON.parse(datasourcesParam));
+        const parsedDatasources = JSON.parse(datasourcesParam);
+        const currentDatasourcesStr = JSON.stringify(datasources);
+        const newDatasourcesStr = JSON.stringify(parsedDatasources);
+        
+        if (currentDatasourcesStr !== newDatasourcesStr) {
+          setDatasources(parsedDatasources);
+          shouldExecute = autoExecuteParam;
+        }
       } catch (e) {
         console.error('Failed to parse datasources from URL');
       }
     }
-    if (autoExecute && queryParam) {
-      // Execute after a short delay to allow state to update
-      setTimeout(() => executeQuery(), 500);
+    
+    // Auto-execute when both query and datasources are set and autoExecute is true
+    if (autoExecuteParam && queryParam && query === queryParam && datasources.length > 0) {
+      const paramsKey = `${queryParam}-${JSON.stringify(datasources)}`;
+      const lastExecuted = sessionStorage.getItem('lastQueryExecuted');
+      
+      if (lastExecuted !== paramsKey) {
+        sessionStorage.setItem('lastQueryExecuted', paramsKey);
+        executeQuery();
+      }
     }
-  }, []);
+  }, [query, datasources]);
 
   return (
     <div>
