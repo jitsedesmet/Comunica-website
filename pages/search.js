@@ -4,6 +4,11 @@ import Navigation from '../components/Navigation';
 import Foot from '../components/Foot';
 
 export default class SearchPage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { loadError: false };
+    }
+
     componentDidMount() {
         // Pagefind UI bundle is generated at build time and served from /pagefind/.
         // Load it dynamically so SSR is unaffected.
@@ -20,10 +25,14 @@ export default class SearchPage extends React.Component {
                 showImages: false,
             });
         };
+        script.onerror = () => {
+            this.setState({ loadError: true });
+        };
         document.head.appendChild(script);
     }
 
     render() {
+        const { loadError } = this.state;
         return (
             <div className="container-page">
                 <Head
@@ -35,7 +44,10 @@ export default class SearchPage extends React.Component {
                 <main className="search-page">
                     <h1>Search</h1>
                     <hr />
-                    <div id="search" />
+                    {loadError
+                        ? <p className="search-load-error">Search is unavailable. Please try again after a full site build.</p>
+                        : <div id="search" />
+                    }
                 </main>
                 <Foot />
             </div>
