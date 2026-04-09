@@ -74,8 +74,8 @@ function filePathToUrlPath(filePath) {
 // Strip Markdown syntax to extract plain text for search indexing.
 function stripMarkdown(content) {
   return content
-    .replace(/<!--[\s\S]*?-->/g, '')          // HTML comments (closed)
-    .replace(/<!--[\s\S]*/g, '')              // unclosed HTML comments
+    .replace(/<!--[\s\S]*?-->/g, '')          // HTML comments
+    .replace(/<!--|-->/g, '')                 // remaining comment delimiters
     .replace(/```[\s\S]*?```/g, '')           // fenced code blocks
     .replace(/`+[^`\n]+`+/g, '')             // inline code (one or more backticks)
     .replace(/!\[.*?\]\(.*?\)/g, '')          // images
