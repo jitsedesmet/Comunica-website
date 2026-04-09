@@ -74,15 +74,16 @@ function filePathToUrlPath(filePath) {
 // Strip Markdown syntax to extract plain text for search indexing.
 function stripMarkdown(content) {
   return content
-    .replace(/<!--.*?-->/gs, '')          // HTML comments
-    .replace(/```[\s\S]*?```/g, '')       // fenced code blocks
-    .replace(/`[^`]*`/g, '')             // inline code
-    .replace(/!\[.*?\]\(.*?\)/g, '')     // images
+    .replace(/<!--[\s\S]*?-->/g, '')          // HTML comments (closed)
+    .replace(/<!--[\s\S]*/g, '')              // unclosed HTML comments
+    .replace(/```[\s\S]*?```/g, '')           // fenced code blocks
+    .replace(/`+[^`\n]+`+/g, '')             // inline code (one or more backticks)
+    .replace(/!\[.*?\]\(.*?\)/g, '')          // images
     .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // links → text
-    .replace(/#{1,6}\s+/g, '')           // headings
+    .replace(/#{1,6}\s+/g, '')               // headings
     .replace(/[*_~]{1,3}([^*_~]+)[*_~]{1,3}/g, '$1') // bold/italic
-    .replace(/^\s*[-*+>|]\s*/gm, '')     // list items / blockquotes / table pipes
-    .replace(/\s+/g, ' ')               // collapse whitespace
+    .replace(/^\s*[-*+>|]\s*/gm, '')         // list items / blockquotes / table pipes
+    .replace(/\s+/g, ' ')                    // collapse whitespace
     .trim();
 }
 

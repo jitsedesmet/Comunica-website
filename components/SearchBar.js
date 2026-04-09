@@ -3,7 +3,7 @@ import React from 'react';
 export default class SearchBar extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { query: '' };
+        this.state = { query: this.props.initialQuery || '' };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
