@@ -1,4 +1,5 @@
 import React from 'react';
+import Router from 'next/router';
 
 export default class SearchBar extends React.Component {
     constructor(props) {
@@ -16,7 +17,7 @@ export default class SearchBar extends React.Component {
         e.preventDefault();
         const q = this.state.query.trim();
         if (q) {
-            window.location.href = '/search/?q=' + encodeURIComponent(q);
+            Router.push('/search/?q=' + encodeURIComponent(q));
         }
     }
 
