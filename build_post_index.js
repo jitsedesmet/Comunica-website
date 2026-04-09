@@ -42,6 +42,7 @@ function scanDir(dirPath, extension) {
   return mdFiles;
 }
 
+
 async function main() {
   const postPaths = scanDir(path.join('pages','blog'), '.md');
   const now = new Date();
