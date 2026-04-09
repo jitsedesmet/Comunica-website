@@ -71,13 +71,28 @@ function filePathToUrlPath(filePath) {
   return urlPath;
 }
 
+// Remove HTML comments using string splitting to avoid incomplete-regex CodeQL alerts.
+function removeHtmlComments(text) {
+  const parts = [];
+  let pos = 0;
+  while (pos < text.length) {
+    const start = text.indexOf('<!--', pos);
+    if (start < 0) {
+      parts.push(text.slice(pos));
+      break;
+    }
+    parts.push(text.slice(pos, start));
+    const end = text.indexOf('-->', start + 4);
+    pos = end < 0 ? text.length : end + 3;
+  }
+  return parts.join(' ');
+}
+
 // Strip Markdown syntax to extract plain text for search indexing.
 function stripMarkdown(content) {
-  return content
-    .replace(/<!--[\s\S]*?-->/g, '')          // HTML comments
-    .replace(/<!--|-->/g, '')                 // remaining comment delimiters
+  return removeHtmlComments(content)
     .replace(/```[\s\S]*?```/g, '')           // fenced code blocks
-    .replace(/`+[^`\n]+`+/g, '')             // inline code (one or more backticks)
+    .replace(/`+[^`\n]+`+/g, '')             // inline code
     .replace(/!\[.*?\]\(.*?\)/g, '')          // images
     .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // links → text
     .replace(/#{1,6}\s+/g, '')               // headings
