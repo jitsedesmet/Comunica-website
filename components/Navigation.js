@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchBar from './SearchBar';
 
 export default class Navigation extends React.Component {
     render() {
@@ -17,6 +18,7 @@ export default class Navigation extends React.Component {
                 <li><a href="/events/">Events</a></li>
 				<li><a href="/association/">Association</a></li>
                 <li><a href="https://github.com/comunica/comunica">GitHub</a></li>
+                <li className="nav-search-item"><SearchBar /></li>
             </ul>
         </nav>;
     }

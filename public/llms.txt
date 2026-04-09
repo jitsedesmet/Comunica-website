@@ -1,0 +1,152 @@
+# Comunica
+
+> Comunica is a highly modular and flexible meta query engine for the Web, primarily designed to execute SPARQL and GraphQL queries over decentralized Linked Data sources.
+
+## Documentation
+
+### About
+
+- [About](https://comunica.dev/about/): Learn more about Comunica.
+
+### Ask
+
+- [Ask](https://comunica.dev/ask/): Ask questions about Comunica.
+
+### Association
+
+- [Board of Directors](https://comunica.dev/association/board/): The board makes decisions regarding the Comunica Association
+- [Bounty Procedures](https://comunica.dev/association/bounty_process/): The process for handling bounties on issues
+- [Comunica Association](https://comunica.dev/association/): Organization for ensuring the maintenance and development of the Comunica
+
+### Blog
+
+- [A New Website for Comunica](https://comunica.dev/blog/2020-08-19-intro/)
+- [Release 1.16.0: Full spec compliance, property paths, CSV/TSV, basic auth, and fixes](https://comunica.dev/blog/2020-08-24-release_1_16/)
+- [Hacktoberfest and Release 1.17.0](https://comunica.dev/blog/2020-09-25-release_1_17/)
+- [Release 1.18.0: Smaller Web bundles and Microdata parsing](https://comunica.dev/blog/2020-11-02-release_1_18/)
+- [Release 1.19.0: Simplifications for extensions](https://comunica.dev/blog/2021-01-18-release_1_19/)
+- [Release 1.20.0: SPARQL Update support](https://comunica.dev/blog/2021-03-30-release_1_20/)
+- [Release 1.21.0: Hypermedia-based SPARQL Updating](https://comunica.dev/blog/2021-04-27-release_1_21/)
+- [Announcing the Comunica Association, and a Bounty Program](https://comunica.dev/blog/2021-06-21-comunica_association_bounties/)
+- [Release 1.22.0: Improved update support, extension functions, and improved CLI handling](https://comunica.dev/blog/2021-08-30-release_1_22/)
+- [Comunica Association Memberships](https://comunica.dev/blog/2021-11-08-comunica_association_members/)
+- [Release 2.0.0: A new major release with radical simplifications and performance improvements](https://comunica.dev/blog/2022-03-03-release_2_0/)
+- [Release 2.3.0: Better timeout support and minor enhancements](https://comunica.dev/blog/2022-06-29-release_2_3/)
+- [Official launch of the Comunica Association](https://comunica.dev/blog/2022-07-14-association_launch/)
+- [Release 2.4.0: Better browser support and performance improvements](https://comunica.dev/blog/2022-08-24-release_2_4/)
+- [Release 2.5.0: Fixes, string sources, and HTTP error handling](https://comunica.dev/blog/2022-11-09-release_2_5/)
+- [Release 2.7.0: Better date support, better performance over SPARQL endpoints, and internal fixes](https://comunica.dev/blog/2023-05-24-release_2_7/)
+- [Release 2.8.0: Support for quoted triples (RDF-star and SPARQL-star)](https://comunica.dev/blog/2023-07-04-release_2_8/)
+- [Release 3.0: 🔥 Blazingly fast federation over heterogeneous sources](https://comunica.dev/blog/2024-03-19-release_3_0/)
+- [Release 3.1: 🌱 New package with tiny bundle size](https://comunica.dev/blog/2024-05-11-release_3_1/)
+- [Release 3.2: 🔎 Knowing what to optimize](https://comunica.dev/blog/2024-07-05-release_3_2/)
+- [Release 4.0: 🚄 Faster actor testing and modularized expressions](https://comunica.dev/blog/2024-10-15-release_4_0/)
+- [Release 4.2: 🍇 Towards real-world federation improvements](https://comunica.dev/blog/2025-04-29-release_4_2/)
+- [Release 4.4: 🌸 Quality-of-life features and optimizations](https://comunica.dev/blog/2025-09-17-release_4_4/)
+- [Release 5.0: 🧩 Increased parsing modularity for SPARQL 1.2 and beyond](https://comunica.dev/blog/2026-01-07-release_5_0/)
+- [Blog](https://comunica.dev/blog/): Blog posts, containing announcements or other news.
+
+### Contribute
+
+- [Contribute](https://comunica.dev/contribute/): Contribute to the development of Comunica.
+
+### Docs
+
+- [Querying from the command line](https://comunica.dev/docs/query/getting_started/query_cli/): Execute SPARQL queries directly from the command line.
+- [Updating from the command line](https://comunica.dev/docs/query/getting_started/update_cli/): Execute SPARQL Update queries directly from the command line.
+- [Querying local files from the command line](https://comunica.dev/docs/query/getting_started/query_cli_file/): Execute SPARQL queries over local RDF files directly from the command line.
+- [Querying in a JavaScript app](https://comunica.dev/docs/query/getting_started/query_app/): Execute SPARQL queries from within your application using the JavaScript API.
+- [Updating in a JavaScript app](https://comunica.dev/docs/query/getting_started/update_app/): Execute SPARQL Update queries from within your application using the JavaScript API.
+- [Querying in a JavaScript browser app](https://comunica.dev/docs/query/getting_started/query_browser_app/): Execute SPARQL queries from within your client-side browser application using the JavaScript API.
+- [Querying from a Docker container](https://comunica.dev/docs/query/getting_started/query_docker/): Execute SPARQL queries within a Docker container.
+- [Setting up a SPARQL endpoint](https://comunica.dev/docs/query/getting_started/setup_endpoint/): Allow querying over HTTP via the SPARQL protocol
+- [Setting up a Web client](https://comunica.dev/docs/query/getting_started/setup_web_client/): Set up a user-friendly static Web page where SPARQL queries can be executed client-side
+- [Query using the latest development version](https://comunica.dev/docs/query/getting_started/query_dev_version/): If you want to make use of the latest changes that are not released yet
+- [Getting started with querying](https://comunica.dev/docs/query/getting_started/): Basic guides on how to easily get started with querying.
+- [Usage showcase](https://comunica.dev/docs/query/usage/): Examples of where Comunica is used.
+- [Querying FAQ](https://comunica.dev/docs/query/faq/): Frequently asked questions about using Comunica.
+- [HTTP Basic Authentication](https://comunica.dev/docs/query/advanced/basic_auth/): Send authenticated HTTP requests by including username and password.
+- [Bindings](https://comunica.dev/docs/query/advanced/bindings/): Bindings objects are used to represent results of SPARQL SELECT queries
+- [Caching](https://comunica.dev/docs/query/advanced/caching/): When remote sources are requested, caching allows them to be reused in the future.
+- [Passing a context](https://comunica.dev/docs/query/advanced/context/): A context can be passed to a query engine to tweak its runtime settings.
+- [Destination types](https://comunica.dev/docs/query/advanced/destination_types/): Comunica detects and handles different types of destinations.
+- [Explain](https://comunica.dev/docs/query/advanced/explain/): Display information about the logical and physical query plan
+- [Extension Functions](https://comunica.dev/docs/query/advanced/extension_functions/): Providing implementations for SPARQL extension functions.
+- [Federated Querying](https://comunica.dev/docs/query/advanced/federation/): Query over the union of data within any number of sources
+- [GraphQL-LD](https://comunica.dev/docs/query/advanced/graphql_ld/): Using the power of JSON-LD contexts, GraphQL queries can be executed by Comunica
+- [HDT](https://comunica.dev/docs/query/advanced/hdt/): HDT offers highly compressed immutable RDF storage.
+- [Logging](https://comunica.dev/docs/query/advanced/logging/): Loggers can be set to different logging levels to inspect what Comunica is doing behind the scenes.
+- [MCP](https://comunica.dev/docs/query/advanced/mcp/): Allow AI agents to query with Comunica through MCP.
+- [Memento](https://comunica.dev/docs/query/advanced/memento/): Using the Memento protocol, time travel queries can be executed.
+- [HTTP Proxy](https://comunica.dev/docs/query/advanced/proxying/): All HTTP requests can optionally go through a proxy.
+- [RDF/JS](https://comunica.dev/docs/query/advanced/rdfjs/): To achieve maximum interoperability between different JavaScript libraries, Comunica builds on top of the RDF/JS specifications.
+- [Querying over RDF/JS sources](https://comunica.dev/docs/query/advanced/rdfjs_querying/): If the built-in source types are not sufficient, you can pass a custom JavaScript object implementing a specific interface.
+- [Updating RDF/JS stores](https://comunica.dev/docs/query/advanced/rdfjs_updating/): If the built-in destination types are not sufficient, you can pass a custom JavaScript object implementing a specific interface.
+- [Result formats](https://comunica.dev/docs/query/advanced/result_formats/): Query results can be serialized in different formats.
+- [Solid](https://comunica.dev/docs/query/advanced/solid/): Solid – the Web-based decentralization ecosystem – can be queried with Comunica.
+- [Source types](https://comunica.dev/docs/query/advanced/source_types/): Comunica detects and handles different types of sources.
+- [SPARQL query types](https://comunica.dev/docs/query/advanced/sparql_query_types/): Different SPARQL query types are possible, such as SELECT, CONSTRUCT, ASK, ...
+- [Supported specifications](https://comunica.dev/docs/query/advanced/specifications/): Comunica supports several RDF-related specifications
+- [Statistics Tracking System](https://comunica.dev/docs/query/advanced/statistics_tracking/): Track real-time runtime statistics during query execution.
+- [Advanced querying](https://comunica.dev/docs/query/advanced/): Advanced guides on how to get the most out of Comunica.
+- [Query with Comunica](https://comunica.dev/docs/query/): Learn how to execute queries in different environments. Such as live in the browser, in JavaScript applications, or the CLI.
+- [Querying with a custom configuration from the command line](https://comunica.dev/docs/modify/getting_started/custom_config_cli/): Create a custom configuration of Comunica modules with reduced features, and query with it from the command line.
+- [Querying with a custom configuration in a JavaScript app](https://comunica.dev/docs/modify/getting_started/custom_config_app/): Create a custom configuration of Comunica modules with changed features, and query with it from within your application using the JavaScript API.
+- [Exposing your custom config as an npm package](https://comunica.dev/docs/modify/getting_started/custom_init/): Wrap your config in an npm package, and expose a CLI tool and a JavaScript API.
+- [Exposing your custom config in a Web client](https://comunica.dev/docs/modify/getting_started/custom_web_client/): Demonstrate your query engine as a static Web page.
+- [Contributing a new query operation actor to the Comunica repository](https://comunica.dev/docs/modify/getting_started/contribute_actor/): Setup a development environment, implement a new actor, and create a pull request.
+- [Adding a config parameter to an actor](https://comunica.dev/docs/modify/getting_started/actor_parameter/): For an existing actor, add a parameter that can be customized in the config file.
+- [Contributing an actor for a new query operation](https://comunica.dev/docs/modify/getting_started/contribute_new_operation/): Extend the SPARQL parser, register a new algebra operation, and implement an actor to handle that new operation
+- [Getting started with modification](https://comunica.dev/docs/modify/getting_started/): Basic guides on how to easily get started with Comunica modification.
+- [Extensions](https://comunica.dev/docs/modify/extensions/): Existing extensions of Comunica.
+- [Modify FAQ](https://comunica.dev/docs/modify/faq/): Frequently asked question about Comunica modification.
+- [Actor Patterns](https://comunica.dev/docs/modify/advanced/actor_patterns/): Overview of common design patterns for actors
+- [Algebra](https://comunica.dev/docs/modify/advanced/algebra/): The internal representation of queries during query execution.
+- [Core Architecture](https://comunica.dev/docs/modify/advanced/architecture_core/): The low-level software architecture of Comunica for achieving modularity.
+- [SPARQL Architecture](https://comunica.dev/docs/modify/advanced/architecture_sparql/): The high-level software architecture of Comunica for implementing SPARQL.
+- [Browser builds](https://comunica.dev/docs/modify/advanced/browser_builds/): All modules in Comunica can be built for the browser.
+- [Components.js](https://comunica.dev/docs/modify/advanced/componentsjs/): Components.js is the dependency injection framework that Comunica uses to wire components via config files.
+- [Custom CLI arguments](https://comunica.dev/docs/modify/advanced/custom_cli_arguments/): Adding custom arguments to CLI tools
+- [Expression Evaluator](https://comunica.dev/docs/modify/advanced/expression-evaluator/): The expression evaluation engine of Comunica.
+- [Hypermedia](https://comunica.dev/docs/modify/advanced/hypermedia/): Discovery of data source capabilities during query execution.
+- [Joins](https://comunica.dev/docs/modify/advanced/joins/): Overview of how join operations are handled during query planning
+- [Linking local Comunica versions to other projects](https://comunica.dev/docs/modify/advanced/linking_local_version/): Guide on how to use a local development version of Comunica with another local project
+- [Logging](https://comunica.dev/docs/modify/advanced/logging/): How to log messages from within actors.
+- [Mediators](https://comunica.dev/docs/modify/advanced/mediators/): An overview of all mediators in Comunica.
+- [Metadata](https://comunica.dev/docs/modify/advanced/metadata/): Information for adaptive planning of query operations.
+- [Observers](https://comunica.dev/docs/modify/advanced/observers/): Passively observe actions executed by actors on a given bus.
+- [Query operation result types](https://comunica.dev/docs/modify/advanced/query_operation_result_types/): An overview of the different output types for query operations.
+- [RDF Parsing and Serializing](https://comunica.dev/docs/modify/advanced/rdf_parsing_serializing/): Basic concepts behind parsing and serializing RDF.
+- [Testing](https://comunica.dev/docs/modify/advanced/testing/): The unit and integration tests that lead to a more stable codebase.
+- [Source attribution](https://comunica.dev/docs/modify/advanced/where_provenance/): Comunica can annotate query result bindings with the sources used to produced these bindings.
+- [Advanced modification](https://comunica.dev/docs/modify/advanced/): Advanced guides on how to get the most out of Comunica modification.
+- [Benchmarking](https://comunica.dev/docs/modify/benchmarking/): Guidelines on running experiments with Comunica.
+- [Modify Comunica](https://comunica.dev/docs/modify/): Learn how to configure your own Comunica engine, or extend Comunica by implementing new components.
+- [Documentation](https://comunica.dev/docs/): Overview of all Comunica documentation.
+
+### Events
+
+- [2019-06-03: Tutorial at ESWC 2019](https://comunica.dev/events/2019-06-03-eswc/): Comunica tutorial at the ESWC 2019 conference
+- [2019-10-26: Tutorial at ISWC 2019](https://comunica.dev/events/2019-10-26-iswc/): Comunica and Solid tutorial at the ISWC 2019 conference
+- [2022-09-07: Comunica Association Launch](https://comunica.dev/events/2022-09-07-association_launch/): An online event for the official launch of the Comunica Association
+- [2022-09-13/15: Semantics Conference](https://comunica.dev/events/2022-09-13-semantics_conference/): The Comunica Association will have a booth and talk at the Semantics Conference in Vienna
+- [Events](https://comunica.dev/events/): Overview of all Comunica-related events.
+
+### Logos
+
+- [Logos](https://comunica.dev/logos/): Free to use logos of Comunica.
+
+### Performance
+
+- [Performance](https://comunica.dev/performance/): Insights into the performance of Comunica.
+
+### Research
+
+- [Approximate Membership Functions](https://comunica.dev/research/amf/): An overview of research that has been done on AMFs during query execution.
+- [Link Traversal](https://comunica.dev/research/link_traversal/): An overview of research that has been done on Link-Traversal-based Query Processing.
+- [Versioning](https://comunica.dev/research/versioning/): An overview of research that has been done on Query Processing for RDF archives.
+- [Research](https://comunica.dev/research/): An overview of these research surrounding Comunica.
+
+### Roadmap
+
+- [Roadmap](https://comunica.dev/roadmap/): The long-term goals of Comunica
