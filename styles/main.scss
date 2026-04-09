@@ -706,17 +706,13 @@ main .date {
                 background: $color-comunica-red;
                 padding: 0.6rem 1rem;
 
-                .search-bar {
-                    background: rgba(255, 255, 255, 0.15);
-                    width: 100%;
+                .search-nav-link {
+                    color: #fff;
                     display: flex;
-
-                    .search-bar-input {
-                        width: 100%;
-                        &:focus {
-                            width: 100%;
-                        }
-                    }
+                    align-items: center;
+                    gap: 0.4rem;
+                    text-decoration: none;
+                    width: 100%;
                 }
             }
         }
@@ -762,80 +758,19 @@ main .date {
     }
 }
 
-// Search bar (in navigation)
-.search-bar {
+// Search icon link in navigation
+.search-nav-link {
+    color: #fff;
     display: inline-flex;
     align-items: center;
-    background: rgba(255, 255, 255, 0.15);
+    gap: 0.4rem;
+    text-decoration: none;
+    padding: 0.2rem 0.25rem;
     border-radius: 4px;
-    padding: 0 0.25rem;
+    font-size: 0.875rem;
 
-    .search-bar-input {
-        background: transparent;
-        border: none;
-        color: #fff;
-        font-size: 0.875rem;
-        outline: none;
-        padding: 0.2rem 0.3rem;
-        width: 140px;
-        transition: width 0.2s ease;
-
-        &::placeholder {
-            color: rgba(255, 255, 255, 0.75);
-        }
-
-        &:focus {
-            width: 200px;
-        }
-
-        // remove native clear button styling inconsistencies
-        &::-webkit-search-cancel-button {
-            -webkit-appearance: none;
-        }
-    }
-
-    .search-bar-button {
-        background: transparent;
-        border: none;
-        color: #fff;
-        cursor: pointer;
-        display: inline-flex;
-        align-items: center;
-        padding: 0.2rem 0.2rem;
-
-        &:hover {
-            opacity: 0.8;
-        }
-    }
-}
-
-// Larger search bar shown on the /search page itself
-.search-page-bar {
-    margin: 1.5rem 0;
-
-    .search-bar {
-        background: #f5f5f5;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        padding: 0 0.5rem;
-
-        .search-bar-input {
-            color: #333;
-            font-size: 1rem;
-            width: 360px;
-
-            &::placeholder {
-                color: #999;
-            }
-
-            &:focus {
-                width: 400px;
-            }
-        }
-
-        .search-bar-button {
-            color: $color-comunica-red;
-        }
+    &:hover {
+        opacity: 0.8;
     }
 }
 
@@ -843,56 +778,16 @@ main .date {
 .search-page {
     padding: 2rem 3rem;
 
-    .search-status {
-        color: #555;
-        margin: 0.5rem 0 1.5rem;
-    }
-
-    .search-results {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .search-result {
-        border-bottom: 1px solid #eee;
-        padding: 1rem 0;
-
-        &:last-child {
-            border-bottom: none;
-        }
-
-        .search-result-title {
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: $color-comunica-red;
-            display: block;
-            margin-bottom: 0.25rem;
-        }
-
-        .search-result-description {
-            margin: 0.2rem 0;
-            color: #333;
-        }
-
-        .search-result-excerpt {
-            margin: 0.2rem 0;
-            color: #555;
-            font-size: 0.9rem;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        .search-result-path {
-            font-size: 0.8rem;
-            color: #888;
-        }
-    }
+    // Pagefind UI theme overrides
+    --pagefind-ui-primary: #{$color-comunica-red};
+    --pagefind-ui-text: #333;
+    --pagefind-ui-background: #fff;
+    --pagefind-ui-border: #ccc;
+    --pagefind-ui-tag: #f5f5f5;
+    --pagefind-ui-font: inherit;
 }
 
-// Mobile: hide search bar from nav (shown on full search page instead)
+// Mobile: hide search icon from nav
 @media (max-width: 860px) {
     .nav-search-item {
         display: none;
