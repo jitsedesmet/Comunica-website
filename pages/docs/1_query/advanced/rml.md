@@ -88,7 +88,8 @@ following the [RML algebra](https://arxiv.org/abs/2503.10385), and evaluates it 
 * A logical source becomes a _source_ operation, which is the only new operation. It binds the values that a mapping refers to, for each record in the data.
 * A term map becomes an `EXTEND` with an expression, such as `IRI(CONCAT("http://example.org/person/", ?id))`.
 * A join condition becomes a `JOIN` over two sources.
-* All triples maps are combined with `UNION`, `DISTINCT` and `CONSTRUCT`.
+* A triples map reads its logical source once: its quads are the patterns of one `CONSTRUCT` template over the extended records.
+* All triples maps are combined with `UNION`, and duplicate quads are removed with `DISTINCT`.
 
 Reference formulations are actors on the
 [RML Reference Formulation bus](https://github.com/jitsedesmet/comunica-feature-rml/tree/main/packages/bus-rml-reference-formulation),
