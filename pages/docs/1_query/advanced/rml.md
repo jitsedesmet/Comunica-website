@@ -4,7 +4,7 @@ description: 'Generate RDF from non-RDF data such as CSV and JSON with RML mappi
 ---
 
 [RML](https://w3id.org/rml/portal) mappings describe how non-RDF data, such as CSV and JSON files, is turned into RDF.
-[`@comunica/materialize-rml`](https://github.com/comunica/comunica/tree/master/engines/materialize-rml)
+[`@comunica/materialize-rml`](https://github.com/jitsedesmet/comunica-feature-rml/tree/main/engines/materialize-rml)
 is a standalone engine that _materializes_ a mapping: it generates all RDF quads that the mapping defines.
 
 ## Usage
@@ -91,5 +91,5 @@ following the [RML algebra](https://arxiv.org/abs/2503.10385), and evaluates it 
 * All triples maps are combined with `UNION`, `DISTINCT` and `CONSTRUCT`.
 
 Reference formulations are actors on the
-[RML Reference Formulation bus](https://github.com/comunica/comunica/tree/master/packages/bus-rml-reference-formulation),
+[RML Reference Formulation bus](https://github.com/jitsedesmet/comunica-feature-rml/tree/main/packages/bus-rml-reference-formulation),
 so support for other data formats can be [added as an actor](/docs/modify/).
